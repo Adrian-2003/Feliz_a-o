@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="theme-color" content="#100608">
+    <meta name="description" content="Una sorpresa especial para celebrar nuestro amor y recibir juntos un nuevo año.">
+
+    <title>Un nuevo año contigo ❤️</title>
+
+    <!-- Tipografías románticas -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Archivo de estilos -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ========================================
+         FONDO PRINCIPAL
+         La imagen cambiará de noche a amanecer
+         ======================================== -->
+
+    <div id="fondo-escena" class="fondo-escena">
+
+        <div class="fondo fondo-noche"></div>
+
+        <div class="fondo fondo-amanecer"></div>
+
+        <div class="velo-escena"></div>
+
+    </div>
+
+
+    <!-- ========================================
+         EFECTOS DEL CIELO
+         Aquí aparecerán las estrellas y partículas
+         ======================================== -->
+
+    <div id="cielo-estrellado" class="cielo-estrellado" aria-hidden="true"></div>
+
+    <canvas
+        id="lienzo-fuegos"
+        class="lienzo-fuegos"
+        aria-hidden="true">
+    </canvas>
+
+
+    <!-- ========================================
+         CONTENEDOR PRINCIPAL
+         ======================================== -->
+
+    <main class="contenedor-principal">
+
+        <!-- ====================================
+             PANTALLA DE CUENTA REGRESIVA
+             Visible antes de Año Nuevo
+             ==================================== -->
+
+        <section
+            id="pantalla-contador"
+            class="pantalla-contador"
+            aria-labelledby="titulo-contador">
+
+            <div class="contenido-contador">
+
+                <p class="etiqueta-superior">
+                    UNA NUEVA HISTORIA ESTÁ POR COMENZAR
+                </p>
+
+                <h1 id="titulo-contador" class="titulo-contador">
+                    Nuestro próximo capítulo
+                </h1>
+
+                <p class="subtitulo-contador">
+                    Cada segundo nos acerca a un nuevo comienzo...
+                </p>
+
+
+                <!-- CONTADOR REGRESIVO -->
+
+                <div
+                    id="contador"
+                    class="contador"
+                    role="timer"
+                    aria-label="Tiempo restante para Año Nuevo">
+
+                    <div class="unidad-tiempo">
+                        <span id="dias" class="numero-tiempo">000</span>
+                        <span class="etiqueta-tiempo">DÍAS</span>
+                    </div>
+
+                    <span class="separador-tiempo" aria-hidden="true">:</span>
+
+                    <div class="unidad-tiempo">
+                        <span id="horas" class="numero-tiempo">00</span>
+                        <span class="etiqueta-tiempo">HORAS</span>
+                    </div>
+
+                    <span class="separador-tiempo" aria-hidden="true">:</span>
+
+                    <div class="unidad-tiempo">
+                        <span id="minutos" class="numero-tiempo">00</span>
+                        <span class="etiqueta-tiempo">MINUTOS</span>
+                    </div>
+
+                    <span class="separador-tiempo" aria-hidden="true">:</span>
+
+                    <div class="unidad-tiempo">
+                        <span id="segundos" class="numero-tiempo">00</span>
+                        <span class="etiqueta-tiempo">SEGUNDOS</span>
+                    </div>
+
+                </div>
+
+
+                <p class="mensaje-espera">
+                    Que todos los años que se aproximan siempre nos encuentren juntos...
+                </p>
+
+                <div class="adorno-dorado" aria-hidden="true">
+                    <span></span>
+                    <span class="adorno-corazon">♥</span>
+                    <span></span>
+                </div>
+
+                <p class="texto-final-contador">
+                    ADRIAN ❤️ CAMILA = 💖♾️
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ====================================
+             PANTALLA DE AÑO NUEVO
+             Se mostrará al llegar la medianoche
+             ==================================== -->
+
+        <section
+            id="pantalla-celebracion"
+            class="pantalla-celebracion"
+            aria-labelledby="titulo-celebracion"
+            hidden>
+
+            <div class="contenido-celebracion">
+
+                <p class="etiqueta-superior etiqueta-celebracion">
+                    UN NUEVO AÑO, UNA NUEVA HISTORIA
+                </p>
+
+                <h1 id="titulo-celebracion" class="titulo-celebracion">
+                    ¡Feliz Año Nuevo, mi amor!
+                </h1>
+
+                <p class="subtitulo-celebracion">
+                    Que nunca nos falten motivos para sonreír juntos.
+                </p>
+
+
+                <!-- MENSAJE ROMÁNTICO -->
+
+                <article
+                    id="carta-amor"
+                    class="carta-amor"
+                    aria-label="Mi felicitación de Año Nuevo">
+
+                    <div class="adorno-carta" aria-hidden="true">
+                        ✦ &nbsp; ♥ &nbsp; ✦
+                    </div>
+
+                    <h2 class="titulo-carta">
+                        Para el amor de mi vida
+                    </h2>
+
+                    <!--
+                        El mensaje se escribirá mediante JavaScript.
+                        La carta permanecerá oculta antes de medianoche.
+                    -->
+
+                    <div
+                        id="mensaje-amor"
+                        class="mensaje-amor"
+                        aria-live="off">
+                    </div>
+
+                    <p class="firma-amor">
+                        Con todo mi amor, siempre para mi Cami. ❤️
+                    </p>
+
+                </article>
+
+
+                <p class="frase-celebracion">
+                    Mi unico deseo siempre es tu felicidad.🌹
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ========================================
+         CONTROLES DE AUDIO
+         Los archivos MP3 se añadirán más adelante
+         ======================================== -->
+
+    <audio
+        id="musica-espera"
+        preload="auto"
+        loop
+        playsinline>
+    </audio>
+
+    <audio
+        id="musica-celebracion"
+        preload="auto"
+        loop
+        playsinline>
+    </audio>
+
+
+    <!-- ========================================
+         ACTIVACIÓN DEL SONIDO
+         Solo se utilizará si el navegador bloquea
+         la reproducción automática
+         ======================================== -->
+
+    <button
+        id="boton-sonido"
+        class="boton-sonido"
+        type="button"
+        aria-label="Activar música"
+        hidden>
+
+        <span aria-hidden="true">♫</span>
+        <span>Activar música</span>
+
+    </button>
+
+
+    <!-- ========================================
+         ARCHIVO JAVASCRIPT
+         Controlará el contador, la música,
+         los fuegos artificiales y la carta
+         ======================================== -->
+
+    <script src="script.js"></script>
+
+</body>
+</html>
